@@ -4,8 +4,10 @@ import random
 from dotenv import load_dotenv
 
 load_dotenv()
+intents = discord.Intents.default()
+intents.message_content = True
 
-client = discord.Client()
+client = discord.Client(intents=intents)
 TOKEN = os.getenv('TOKEN')
 
 @client.event
