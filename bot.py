@@ -30,6 +30,8 @@ async def on_message(message):
             await message.channel.send(f"Bye{username}")
         elif user_message.lower() == "$joke":
             jokes = [" Can someone please shed more light on how my lamp got stolen?",
+                     "im afraid for the calendar.... its days are counted",
+                     "what do you call a fish wearing a bowtie? sofishticated.",
                      "Why is she called llene? She stands on equal legs.",
                      "What do you call a gazelle in a lions territory? Denzel."]
             await message.channel.send(random.choice(jokes))
