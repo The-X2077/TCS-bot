@@ -34,7 +34,9 @@ async def on_message(message):
         elif user_message.lower() == "bye":
             await message.channel.send(f"Bye{username}")
         elif user_message.lower() == "$joke":
-            await message.channel.send(random.choice(shortjoke.jokes))
+            joke = random.choice(shortjoke.jokes)
+            await message.channel.send(joke)
+            print("[JOKE]", joke)
         elif user_message.lower() == "how are you?":
             await message.channel.send(random.choice(["Good!", "Bad"]))
         elif user_message.lower() == "$screenemote":
