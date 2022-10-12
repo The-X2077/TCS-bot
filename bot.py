@@ -1,5 +1,6 @@
 import discord
 import shortjoke
+import time
 import os
 import random
 from dotenv import load_dotenv
@@ -17,7 +18,7 @@ async def on_ready():
     print("{0.user} connected without errors".format(client))
 
 logfileid = str(time.time()) + ".txt"
-logfile = open(logfileid, "w+", 0)
+logfile = open(logfileid, "w+", 1)
 
 @client.event
 async def on_message(message):
@@ -25,8 +26,9 @@ async def on_message(message):
     channel = str(message.channel.name)
     user_message = str(message.content)
 
+    msg_string = username + ":  " + user_message
     #print(f'Message {user_message} by {username} in channel {channel}')
-    logfile.write(username, ":  ", user_message)
+    logfile.write(msg_string)
 
     if message.author == client.user:
         return
