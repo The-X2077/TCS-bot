@@ -17,7 +17,7 @@ TOKEN = os.getenv('TOKEN')
 async def on_ready():
     print("{0.user} connected without errors".format(client))
 
-logfileid = str(time.time()) + ".txt"
+logfileid = str(time.time()) + ".txt\n"
 logfile = open(logfileid, "w+", 1)
 
 @client.event
