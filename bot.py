@@ -17,7 +17,7 @@ TOKEN = os.getenv('TOKEN')
 async def on_ready():
     print("{0.user} connected without errors".format(client))
 
-logfileid = str(time.time()) + ".txt\n"
+logfileid = str(time.time()) + ".txt"
 logfile = open(logfileid, "w+", 1)
 
 @client.event
@@ -26,7 +26,7 @@ async def on_message(message):
     channel = str(message.channel.name)
     user_message = str(message.content)
 
-    msg_string = username + ":  " + user_message
+    msg_string = username + ":  " + user_message + "\n"
     #print(f'Message {user_message} by {username} in channel {channel}')
     logfile.write(msg_string)
 
